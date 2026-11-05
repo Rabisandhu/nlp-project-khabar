@@ -1,0 +1,20 @@
+# data
+data/raw/
+data/processed/
+*.zip
+*.csv
+*.parquet
+# models (large)
+models/*.model
+models/*.npy
+models/*.bin
+# env
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+.vscode/
+.idea/
