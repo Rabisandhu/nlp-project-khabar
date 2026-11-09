@@ -30,7 +30,7 @@ Raw data is NOT committed. See `data/README.md` for download steps.
 
 ## Project phases
 
-- [ ] Phase 1 — Data acquisition & cleaning (`assignment-1`)
+- [x] Phase 1 — Data acquisition & cleaning (`assignment-1`)
 - [ ] Phase 2 — Word representations (`assignment-2`)
 - [ ] Phase 3 — Classical ML
 - [ ] Phase 4 — Deep learning
@@ -60,6 +60,22 @@ python src/make_dataset.py       # -> data/processed/cleaned.csv     (clean_text
 jupyter notebook                 # open the notebooks in notebooks/
 ```
 Phase 2 loads `data/processed/cleaned.csv` directly.
+
+## How to run (Phase 2 – word representations)
+Needs `data/processed/cleaned.csv` from Phase 1.
+```bash
+pip install -r requirements.txt
+python src/count_vectors.py      # Part A: BoW, TF-IDF, n-grams  -> models/*.joblib
+python src/train_embeddings.py   # Part B: CBOW, Skip-gram, fastText -> models/*.model
+```
+Then open `notebooks/04_count_based.ipynb`, `05_embeddings.ipynb`, `06_comparison_vectorize.ipynb`.
+Models are not committed (too big); the two scripts above regenerate them.
+
+Phase 3 uses one function:
+```python
+from vectorize import vectorize          # src/vectorize.py
+v = vectorize("raw Urdu article ...", method="tfidf")   # bow | tfidf | cbow | skipgram | fasttext
+```
 
 ## Setup
 
