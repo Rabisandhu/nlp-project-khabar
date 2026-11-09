@@ -4,7 +4,8 @@ data/processed/
 *.zip
 *.csv
 *.parquet
-# models (large)
+# models (large) - regenerate with src/count_vectors.py and src/train_embeddings.py
+models/
 models/*.model
 models/*.npy
 models/*.bin
